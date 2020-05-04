@@ -41,6 +41,21 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+// Get the navigation items and update them
+const navItems = document.querySelectorAll("nav a");
+
+// Loop over the navigation items and update their source
+navItems.forEach((item, idx) => { item.textContent = siteContent["nav"][`nav-item-${idx + 1}`]; });
+
+// Get the header text element and update it's text
+let headerText = document.querySelector(".cta-text h1");
+headerText.textContent = siteContent["cta"]["h1"];
+
+
+// Get the header button and set it's text
+const callToAction = document.querySelector(".cta-text button");
+callToAction.textContent = siteContent["cta"]["button"];
+
 // Get the header image and update it's src attribute to point to the image
 let headerImg = document.querySelector("#cta-img");
 headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
