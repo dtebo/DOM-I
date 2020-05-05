@@ -38,7 +38,7 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // Get the navigation items and update them
@@ -48,7 +48,7 @@ const navItems = document.querySelectorAll("nav a");
 navItems.forEach((item, idx) => { item.textContent = siteContent["nav"][`nav-item-${idx + 1}`]; });
 
 // Get the header text element and update it's text
-let headerText = document.querySelector(".cta-text h1");
+const headerText = document.querySelector(".cta-text h1");
 headerText.textContent = siteContent["cta"]["h1"];
 
 
@@ -57,5 +57,19 @@ const callToAction = document.querySelector(".cta-text button");
 callToAction.textContent = siteContent["cta"]["button"];
 
 // Get the header image and update it's src attribute to point to the image
-let headerImg = document.querySelector("#cta-img");
+const headerImg = document.querySelector("#cta-img");
 headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// Update the top content section with the appropriate code
+const features = document.querySelector(".top-content .text-content:first-child");
+features.childNodes[1].textContent = siteContent["main-content"]["features-h4"];
+features.childNodes[3].textContent = siteContent["main-content"]["features-content"];
+
+const about = document.querySelector(".top-content .text-content:nth-of-type(2)");
+about.childNodes[1].textContent = siteContent["main-content"]["about-h4"];
+about.childNodes[3].textContent = siteContent["main-content"]["about-content"];
+
+// Update the middle image source
+const middleImg = document.querySelector(".middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
