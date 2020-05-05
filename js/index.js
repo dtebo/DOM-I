@@ -128,3 +128,29 @@ contact[0].childNodes[4].textContent = siteContent["contact"]["email"];
 // Update the footer
 const footer = document.getElementsByTagName('footer');
 footer[0].childNodes[1].textContent = siteContent["footer"]["copyright"];
+
+// Stretch Goal II
+// Data to use during update
+const updateData = {
+  "features": {
+    "features-new-header": "Features - New!",
+    "features-added-text": "Additional Info! - JavaScript is awesome!"
+  }
+};
+
+const featuresSection = document.querySelector(".top-content .text-content:first-child h4");
+const button = document.createElement("button");
+button.textContent = "Update Features";
+
+function updateFeatures(header, text){
+  // Update the features section
+  const features = document.querySelector(".top-content .text-content:first-child");
+  features.childNodes[1].textContent = header;
+  features.childNodes[3].textContent += text;
+}
+
+button.onclick = () => {
+  updateFeatures(updateData["features"]["features-new-header"], updateData["features"]["features-added-text"]);
+};
+
+featuresSection.appendChild(button);
