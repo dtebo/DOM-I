@@ -85,3 +85,14 @@ product.childNodes[3].textContent = siteContent["main-content"]["product-content
 const vision = document.querySelector(".bottom-content .text-content:last-child");
 vision.childNodes[1].textContent = siteContent["main-content"]["vision-h4"];
 vision.childNodes[3].textContent = siteContent["main-content"]["vision-content"];
+
+// Update the contact section
+const contact = document.getElementsByClassName('contact');
+contact[0].childNodes[1].textContent = siteContent["contact"]["contact-h4"];
+contact[0].childNodes[2].textContent = siteContent["contact"]["address"];
+contact[0].childNodes[3].textContent = siteContent["contact"]["phone"];
+contact[0].childNodes[4].textContent = siteContent["contact"]["email"];
+
+// Update the footer
+const footer = document.getElementsByTagName('footer');
+footer[0].childNodes[1].textContent = siteContent["footer"]["copyright"];
