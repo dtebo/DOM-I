@@ -60,7 +60,7 @@ callToAction.textContent = siteContent["cta"]["button"];
 const headerImg = document.querySelector("#cta-img");
 headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
-// Update the top content section with the appropriate code
+// Update the top content section
 const features = document.querySelector(".top-content .text-content:first-child");
 features.childNodes[1].textContent = siteContent["main-content"]["features-h4"];
 features.childNodes[3].textContent = siteContent["main-content"]["features-content"];
@@ -73,3 +73,15 @@ about.childNodes[3].textContent = siteContent["main-content"]["about-content"];
 const middleImg = document.querySelector(".middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
+// Update the bottom content section
+const services = document.querySelector(".bottom-content .text-content:first-child");
+services.childNodes[1].textContent = siteContent["main-content"]["services-h4"];
+services.childNodes[3].textContent = siteContent["main-content"]["services-content"];
+
+const product = document.querySelector(".bottom-content .text-content:nth-of-type(2)");
+product.childNodes[1].textContent = siteContent["main-content"]["product-h4"];
+product.childNodes[3].textContent = siteContent["main-content"]["product-content"];
+
+const vision = document.querySelector(".bottom-content .text-content:last-child");
+vision.childNodes[1].textContent = siteContent["main-content"]["vision-h4"];
+vision.childNodes[3].textContent = siteContent["main-content"]["vision-content"];
