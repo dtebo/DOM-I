@@ -60,31 +60,33 @@ const nav = document.querySelector("nav");
 const promo = document.createElement("a");
 
 promo.href = "#";
-promo.target = "_blank";
 promo.textContent = "Promos";
 promo.style.color = "green";
 
-/* Support */
-const support = document.createElement("a");
+/* Home */
+const home = document.createElement("a");
 
-support.href = "#";
-support.target = "_blank";
-support.textContent = "Support";
-support.style.color = "green";
+home.href = "#";
+home.textContent = "Home";
+home.style.setProperty("color", "green");
 
 // Add the new navigation items to the nav
-nav.prepend(support);
+nav.prepend(home);
 nav.appendChild(promo);
-
 
 // Get the header text element and update it's text
 const headerText = document.querySelector(".cta-text h1");
 headerText.textContent = siteContent["cta"]["h1"];
 
+// Stretch: Update header text color
+headerText.style.color = "aqua";
 
 // Get the header button and set it's text
 const callToAction = document.querySelector(".cta-text button");
 callToAction.textContent = siteContent["cta"]["button"];
+
+// Stretch: Update button border color
+callToAction.style.border = "1px solid blue";
 
 // Get the header image and update it's src attribute to point to the image
 const headerImg = document.querySelector("#cta-img");
