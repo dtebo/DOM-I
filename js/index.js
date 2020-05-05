@@ -45,7 +45,37 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 const navItems = document.querySelectorAll("nav a");
 
 // Loop over the navigation items and update their source
-navItems.forEach((item, idx) => { item.textContent = siteContent["nav"][`nav-item-${idx + 1}`]; });
+navItems.forEach((item, idx) => {
+  item.textContent = siteContent["nav"][`nav-item-${idx + 1}`]; 
+
+  // Task 3 - Part I
+  item.style.color = "green";
+});
+
+// Task 3 - Part II
+// Create a navigation item
+const nav = document.querySelector("nav");
+
+/* Promo */
+const promo = document.createElement("a");
+
+promo.href = "#";
+promo.target = "_blank";
+promo.textContent = "Promos";
+promo.style.color = "green";
+
+/* Support */
+const support = document.createElement("a");
+
+support.href = "#";
+support.target = "_blank";
+support.textContent = "Support";
+support.style.color = "green";
+
+// Add the new navigation items to the nav
+nav.prepend(support);
+nav.appendChild(promo);
+
 
 // Get the header text element and update it's text
 const headerText = document.querySelector(".cta-text h1");
