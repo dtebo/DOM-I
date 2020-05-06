@@ -149,8 +149,8 @@ function updateFeatures(header, text){
   features.childNodes[3].textContent += text;
 }
 
-button.onclick = () => {
+button.addEventListener('click', () => {
   updateFeatures(updateData["features"]["features-new-header"], updateData["features"]["features-added-text"]);
-};
+});
 
 featuresSection.appendChild(button);
