@@ -27,10 +27,17 @@ class Timer{
         this.milliseconds = 0;
         
         this.btn = document.getElementsByClassName(triggeringElement);
+        this.digits = document.querySelectorAll(".digits :not(.btn)");
     }
 
     start(){
+        // disable the start button
         this.btn[0].setAttribute('disabled', true);
+
+        // for each digit, add the fade animation
+        this.digits.forEach((digit) => {
+            digit.classList += " fade";
+        });
 
         this.id = window.setInterval(() => {
             this.incrementMilliseconds();
@@ -78,6 +85,11 @@ class Timer{
             this.secondsOnes.textContent = "0";
             this.secondsTens.textContent = "1";
 
+            // Set digits to red
+            this.digits.forEach((digit) => {
+                digit.style.color = "red";
+            });
+
             // Don't allow the timer to run beyond 10 seconds
             this.clear(this.id);
         }
@@ -85,6 +97,11 @@ class Timer{
 
     clear(id){
         this.btn[0].disabled = false;
+
+        // for each digit, add the fade animation
+        this.digits.forEach((digit) => {
+            digit.classList.remove("fade");
+        });
 
         clearInterval(id);
     }
@@ -97,6 +114,11 @@ class Timer{
         this.secondsOnes.textContent = "0";
         this.msHundreds.textContent = "0";
         this.msTens.textContent = "0";
+        
+        // Reset digit color to black
+        this.digits.forEach((d) => {
+            d.style.color = "black";
+        });
     }
 }
 

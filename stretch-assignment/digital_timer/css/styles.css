@@ -19,6 +19,7 @@
   font-display: swap;
   src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwN4rWqZPBQ.ttf) format('truetype');
 }
+/* Animations */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -175,6 +176,9 @@ body .digits .digit {
 body .digits .digit:last-of-type {
   margin: 0 10px 15px 0;
 }
+.fade {
+  animation: 0.8s linear 0s infinite alternate fading;
+}
 .redDigit {
   color: red;
 }
@@ -184,4 +188,13 @@ body .digits .digit:last-of-type {
   border: 1px solid #add8e6;
   font: 1rem 'Raleway';
   margin: 0 10px 0 10px;
+}
+/* Animations */
+@keyframes fading {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
 }
