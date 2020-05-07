@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .digits{
+    display: flex;
+    height: 5rem;
+    align-items: center;
+
+    .digit{
+      display: inline-block;
+      font-family: @digit-font;
+      font-size: 80px;
+      .margin(@bottom: 15px);
+
+      &:last-of-type{
+        .margin(@right: 10px, @bottom: 15px);
+      }
+    }
+  }
+}
+
+.redDigit {
+  color: red;
+}
+
+/* button styles */
+.btn{
+  .button(@btn-background, @btn-border);
+  .margin(@right: 10px, @left: 10px);
+  
+}
