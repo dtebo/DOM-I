@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .digits{
+    display: flex;
+    height: 5rem;
+    align-items: center;
+
+    .digit{
+      display: inline-block;
+      font-family: @digit-font;
+      font-size: 80px;
+      .margin(@bottom: 15px);
+
+      &:last-of-type{
+        .margin(@right: 10px, @bottom: 15px);
+      }
+
+    }
+  }
+}
+
+.fade{
+  animation: .8s linear 0s infinite alternate fading;
+}
+
+.redDigit {
+  color: red;
+}
+
+/* button styles */
+.btn{
+  .button(@btn-background, @btn-border);
+  .margin(@right: 10px, @left: 10px);
+}
+
+/* Animations */
+.keyframes(fading, { opacity: 1; }, { opacity: .5; });

@@ -38,5 +38,119 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+const logo = document.getElementById("logo-img");
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+// Get the navigation items and update them
+const navItems = document.querySelectorAll("nav a");
+
+// Loop over the navigation items and update their source
+navItems.forEach((item, idx) => {
+  item.textContent = siteContent["nav"][`nav-item-${idx + 1}`]; 
+
+  // Task 3 - Part I
+  item.style.color = "green";
+});
+
+// Task 3 - Part II
+// Create a navigation item
+const nav = document.querySelector("nav");
+
+/* Promo */
+const promo = document.createElement("a");
+
+promo.href = "#";
+promo.textContent = "Promos";
+promo.style.color = "green";
+
+/* Home */
+const home = document.createElement("a");
+
+home.href = "#";
+home.textContent = "Home";
+home.style.setProperty("color", "green");
+
+// Add the new navigation items to the nav
+nav.prepend(home);
+nav.appendChild(promo);
+
+// Get the header text element and update it's text
+const headerText = document.querySelector(".cta-text h1");
+headerText.textContent = siteContent["cta"]["h1"];
+
+// Stretch: Update header text color
+headerText.style.color = "aqua";
+
+// Get the header button and set it's text
+const callToAction = document.querySelector(".cta-text button");
+callToAction.textContent = siteContent["cta"]["button"];
+
+// Stretch: Update button border color
+callToAction.style.border = "1px solid blue";
+
+// Get the header image and update it's src attribute to point to the image
+const headerImg = document.querySelector("#cta-img");
+headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// Update the top content section
+const features = document.querySelector(".top-content .text-content:first-child");
+features.childNodes[1].textContent = siteContent["main-content"]["features-h4"];
+features.childNodes[3].textContent = siteContent["main-content"]["features-content"];
+
+const about = document.querySelector(".top-content .text-content:nth-of-type(2)");
+about.childNodes[1].textContent = siteContent["main-content"]["about-h4"];
+about.childNodes[3].textContent = siteContent["main-content"]["about-content"];
+
+// Update the middle image source
+const middleImg = document.querySelector(".middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// Update the bottom content section
+const services = document.querySelector(".bottom-content .text-content:first-child");
+services.childNodes[1].textContent = siteContent["main-content"]["services-h4"];
+services.childNodes[3].textContent = siteContent["main-content"]["services-content"];
+
+const product = document.querySelector(".bottom-content .text-content:nth-of-type(2)");
+product.childNodes[1].textContent = siteContent["main-content"]["product-h4"];
+product.childNodes[3].textContent = siteContent["main-content"]["product-content"];
+
+const vision = document.querySelector(".bottom-content .text-content:last-child");
+vision.childNodes[1].textContent = siteContent["main-content"]["vision-h4"];
+vision.childNodes[3].textContent = siteContent["main-content"]["vision-content"];
+
+// Update the contact section
+const contact = document.getElementsByClassName('contact');
+contact[0].childNodes[1].textContent = siteContent["contact"]["contact-h4"];
+contact[0].childNodes[2].textContent = siteContent["contact"]["address"];
+contact[0].childNodes[3].textContent = siteContent["contact"]["phone"];
+contact[0].childNodes[4].textContent = siteContent["contact"]["email"];
+
+// Update the footer
+const footer = document.getElementsByTagName('footer');
+footer[0].childNodes[1].textContent = siteContent["footer"]["copyright"];
+
+// Stretch Goal II
+// Data to use during update
+const updateData = {
+  "features": {
+    "features-new-header": "Features - New!",
+    "features-added-text": "Additional Info! - JavaScript is awesome!"
+  }
+};
+
+const featuresSection = document.querySelector(".top-content .text-content:first-child h4");
+const button = document.createElement("button");
+button.textContent = "Update Features";
+
+function updateFeatures(header, text){
+  // Update the features section
+  const features = document.querySelector(".top-content .text-content:first-child");
+  features.childNodes[1].textContent = header;
+  features.childNodes[3].textContent += text;
+}
+
+button.addEventListener('click', () => {
+  updateFeatures(updateData["features"]["features-new-header"], updateData["features"]["features-added-text"]);
+});
+
+featuresSection.appendChild(button);
